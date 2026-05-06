@@ -1,0 +1,48 @@
+Last login: Wed May  6 18:39:12 on ttys000
+user@N-00098 ~ % gcc -o example example.c -lsqlite3
+clang: error: no such file or directory: 'example.c'
+user@N-00098 ~ % mkdir ~/lab3
+user@N-00098 ~ % cd ~/lab3
+user@N-00098 lab3 % mkdir examples
+user@N-00098 lab3 % cd examples
+user@N-00098 examples % nano example1_gr12a_SakalouskajaAmalija.c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09       File: example1_gr12a_SakalouskajaAmalija.c       Modified  
+
+#include <stdio.h>
+#include <sqlite3.h>
+    
+static int callback(void *NotUsed, int argc, char **argv, char
+**azColName) {
+    for (int i = 0; i < argc; i++)
+        printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+    printf("\n");
+    return 0;
+}
+     
+int main() {
+    sqlite3 *db;
+    char *errMsg = 0;
+    int rc;
+                            
+    rc = sqlite3_open("test.db", &db);
+    if (rc) {
+        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
